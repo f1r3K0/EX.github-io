@@ -1,4 +1,4 @@
-#PHP反序列化漏洞理解和应用
+# PHP反序列化漏洞理解和应用
 
 
 
@@ -11,7 +11,7 @@ php反序列化漏洞，又叫php对象注入漏洞，是一种常见的漏洞�
 <http://whc.dropsec.xyz/2017/06/15/PHP反序列化漏洞理解与利用/>
 https://p0sec.net/index.php/archives/114/
 
-##学习前最好提前掌握的知识
+## 学习前最好提前掌握的知识
 - [PHP类与对象](https://www.php.net/manual/zh/language.oop5.php)
 - [PHP魔术方法](https://secure.php.net/manual/zh/language.oop5.magic.php)
 - [serialize()](http://php.net/manual/zh/function.serialize.php)与[unserialize()](http://php.net/manual/zh/function.unserialize.php)
@@ -220,11 +220,11 @@ echo serialize($obj) . '<br />';
 
 chybeta浅谈PHP反序列化 <(https://chybeta.github.io/2017/06/17/浅谈php反序列化漏洞/>
 
-####其它magic function的利用
+#### 其它magic function的利用
 
 这里我就结合PCTF和今年国赛上的题来分析了
 
-####PCTF
+#### PCTF
 
 [题目链接](http://web.jarvisoj.com:32768/index.php)
 
@@ -268,7 +268,7 @@ index.php 1.包含了一个shield.php 2.实例化了Shiele方法 3.通过[GET]�
 
 shield.php 1.首先就能发现file是可控的（利用点） 2.construct()在index中实例化的时候就已经执行了，因此不会影响我们对可控$file的利用。
 
-######构造poc
+###### 构造poc
 
 ```php
 <?php
@@ -287,7 +287,7 @@ shield.php 1.首先就能发现file是可控的（利用点） 2.construct()在i
 
 <http://web.jarvisoj.com:32768/index.php?class=O:6:%22Shield%22:1:{s:4:%22file%22;s:8:%22pctf.php%22;}>
 
-####ciscn2019 web1- JustSoso
+#### ciscn2019 web1- JustSoso
 
 读源码的过程省略（反正也没有保存嘤～）
 
@@ -431,7 +431,7 @@ echo(serialize($a));
 
 忘记encode了，算了。。。。。
 
-![1556278136995](/Users/apple/Downloads/1556278136995.jpeg)
+![](https://s2.ax1x.com/2019/04/26/En22U1.jpg)
 
 ## 利用普通成员方法
 
