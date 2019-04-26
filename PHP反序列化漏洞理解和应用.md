@@ -44,9 +44,7 @@ print_r($class_ser);
 O:6:"people":2:{s:4:"name";s:6:"f1r3K0";s:3:"age";s:2:"18";}
 ```
 
-![image-20190426133103830](/Users/apple/Library/Application Support/typora-user-images/image-20190426133103830.png)
-
-
+[![EnWYYq.md.png](https://s2.ax1x.com/2019/04/26/EnWYYq.md.png)](https://imgchr.com/i/EnWYYq)
 - 注意这里的括号外边的为大写英文字母`O`
 - 下面是字母代表的类型
 a - array 数组
@@ -85,8 +83,7 @@ print_r($class_unser);
 ?>
 ```
 
-![image-20190426134502965](/Users/apple/Library/Application Support/typora-user-images/image-20190426134502965.png)
-
+[![Enfv26.md.png](https://s2.ax1x.com/2019/04/26/Enfv26.md.png)](https://imgchr.com/i/Enfv26)
 提醒一下，当使用 unserialize() 恢复对象时， 将调用 __wakeup() 成员函数。（先埋个伏笔，这个点后面会提）
 
 # 反序列化漏洞
@@ -147,8 +144,7 @@ print_r($class_unser);
 
 结果如下：
 
-![image-20190426150440537](/Users/apple/Library/Application Support/typora-user-images/image-20190426150440537.png)
-
+[![EnfxxK.md.png](https://s2.ax1x.com/2019/04/26/EnfxxK.md.png)](https://imgchr.com/i/EnfxxK)
 从运行结果来看，我们可以看出unserialize函数是优先调用"__wakeup()"再进行的反序列化字符串。同时，对于其他方法的调用顺序也一目了然了。（注意：这里我将sleep注释掉了，因为sleep会在序列化的时候调用，因此执行sleep方法就不会再执行序列以及之后的操作了。）
 
 ### 利用场景
@@ -281,8 +277,7 @@ shield.php 1.首先就能发现file是可控的（利用点） 2.construct()在i
 ?>
 ```
 
-![image-20190426175916077](/Users/apple/Library/Application Support/typora-user-images/image-20190426175916077.png)
-
+[![EnhOeg.md.png](https://s2.ax1x.com/2019/04/26/EnhOeg.md.png)](https://imgchr.com/i/EnhOeg)
 最终poc:
 
 <http://web.jarvisoj.com:32768/index.php?class=O:6:%22Shield%22:1:{s:4:%22file%22;s:8:%22pctf.php%22;}>
@@ -421,8 +416,7 @@ echo(serialize($a));
 ?>
 ```
 
-![image-20190426190618722](/Users/apple/Library/Application Support/typora-user-images/image-20190426190618722.png)
-
+[![En4uSx.md.png](https://s2.ax1x.com/2019/04/26/En4uSx.md.png)](https://imgchr.com/i/En4uSx)
 这里还有一个点就是我们需要用%00来补全空缺的字符，又因为含有private 变量，需要 encode 一下。（累死了，嘤～）
 
 最终payload：
@@ -431,7 +425,7 @@ echo(serialize($a));
 
 忘记encode了，算了。。。。。
 
-![](https://s2.ax1x.com/2019/04/26/En22U1.jpg)
+[![En22U1.md.jpg](https://s2.ax1x.com/2019/04/26/En22U1.md.jpg)](https://imgchr.com/i/En22U1)
 
 ## 利用普通成员方法
 
